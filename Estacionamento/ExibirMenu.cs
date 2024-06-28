@@ -24,18 +24,20 @@ namespace Estacionamento
             }
 
             else if (resposta == 1) {
-
-                Console.WriteLine("Deseja usar seu cupom de desconto? Se sim digite 1.\n");
+                Console.WriteLine("-----------------------------------");
+                Console.WriteLine("Você tem direito a um cupom de 5%\n");
+                Console.WriteLine("Se deseja ultilizar digite 1");
                 Console.WriteLine("Se não digite 2.");
-                resposta2= int.Parse(Console.ReadLine());
-                
-                if(resposta2 == 1)
+                resposta= int.Parse(Console.ReadLine());
+                Console.WriteLine("-----------------------------------");
+
+                if (resposta == 1)
                 {
-                    Console.WriteLine("Ok,vamos aplicar seu desconto no valor final.");
+                    Console.WriteLine("Você tera seu cupom adicionado no cauculo final");
                 }
-                else if(resposta2 == 2)
+                else if(resposta == 2)
                 {
-                    Console.WriteLine("Ok, você nao tera o desconto final.");
+                    Console.WriteLine("Ok, o preço do estacionamento permanecera o mesmo");
                 }
 
             }
