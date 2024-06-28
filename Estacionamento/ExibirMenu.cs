@@ -15,7 +15,7 @@ namespace Estacionamento
 
             Console.WriteLine("Olá, Seja Bem-Vindo ao nosso estacionamento.\n");
             Console.WriteLine("Se você ja e nosso cliente, digite 1.\n");
-            Console.WriteLine("Se você deseja se cadastrar digite 2.");
+            Console.WriteLine("Se você deseja se cadastrar digite 2."); 
             resposta = int.Parse(Console.ReadLine());
 
             if (resposta < 1 || resposta > 2)
