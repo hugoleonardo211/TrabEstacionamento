@@ -9,10 +9,13 @@ namespace Estacionamento
   public class ExibirMenu
     {
         public int resposta { get; set; }
-        public int resposta2 { get; set; } 
+        public string Nome  { get; set; }
+       
+        public string veiculo { get; set; }
+       
         public void Exibirmenu()
         {
-
+            Nome = String.Empty;
             Console.WriteLine("Olá, Seja Bem-Vindo ao nosso estacionamento.\n");
             Console.WriteLine("Se você ja e nosso cliente, digite 1.\n");
             Console.WriteLine("Se você deseja se cadastrar digite 2.");
@@ -25,6 +28,11 @@ namespace Estacionamento
 
             else if (resposta == 1) {
                 Console.WriteLine("-----------------------------------");
+                while(Nome == String.Empty)
+                {
+                    Console.WriteLine("Insira seu nome");
+                    Nome = Console.ReadLine();
+                }
                 Console.WriteLine("Você tem direito a um cupom de 5%\n");
                 Console.WriteLine("Se deseja ultilizar digite 1");
                 Console.WriteLine("Se não digite 2.");
@@ -47,6 +55,20 @@ namespace Estacionamento
                 Console.WriteLine(" Qual sua Idade.\n");
                 Console.WriteLine(" Digite seu CPF.");
             }
+
+            Console.WriteLine("---------------------------------");
+
+            Console.WriteLine("O veiculo que deseja estacionar é carro ou moto?");
+            veiculo = Console.ReadLine();
+
+            if(veiculo.ToLower() == "carro")
+            {
+
+            }
+
+
+
+            Console.WriteLine("---------------------------------");
 
         }
     }
