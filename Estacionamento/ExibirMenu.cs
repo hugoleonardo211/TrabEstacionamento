@@ -10,8 +10,9 @@ namespace Estacionamento
     {
         public int resposta { get; set; }
         public string Nome  { get; set; }
-       
-        public string veiculo { get; set; }
+        public string Veiculo { get; set; }
+        public string Portas { get; set; }
+        public string Cilindradas { get; set; }
        
         public void Exibirmenu()
         {
@@ -59,11 +60,18 @@ namespace Estacionamento
             Console.WriteLine("---------------------------------");
 
             Console.WriteLine("O veiculo que deseja estacionar é carro ou moto?");
-            veiculo = Console.ReadLine();
+            Veiculo = Console.ReadLine();
 
-            if(veiculo.ToLower() == "carro")
+            if(Veiculo.ToLower() == "carro")
             {
-
+                Console.WriteLine("Quantas portas tem seu carro?");
+                Portas = Console.ReadLine();
+                
+            }
+            else if(Veiculo.ToLower() == "moto")
+            {
+                Console.WriteLine("Quantas cilindradas tem sua moto?");
+                Cilindradas = Console.ReadLine();
             }
 
 
