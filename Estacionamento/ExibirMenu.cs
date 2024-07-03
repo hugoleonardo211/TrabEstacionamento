@@ -60,6 +60,20 @@ namespace Estacionamento
         }
         public void Editar()
         {
+            Console.WriteLine("------------DESEJA EDITAR ALGO-------------");
+            Console.WriteLine("ID:" + Id);
+            Console.WriteLine("Nome: " + Nome);
+            Console.WriteLine("Idade: " + Idade);
+            Console.WriteLine("CPF: " + Cpf);
+            Console.WriteLine("Qual campo deseja atualizar?");
+            int campo = int.Parse(Console.ReadLine());
+           
+            Console.WriteLine("Novo valor para o campo?");
+            string respostaC = Console.ReadLine();
+          
+            
+
+
             Console.WriteLine("--------CADASTRO REALIZADO---------");
             Console.WriteLine("ID:" +Id);
             Console.WriteLine("Nome: "+Nome);
@@ -67,19 +81,10 @@ namespace Estacionamento
             Console.WriteLine("CPF: "+Cpf);
             Console.WriteLine("-----------------");
 
-            Console.WriteLine("------------DESEJA EDITAR ALGO-------------");
-            Console.WriteLine("ID:" +Id);
-            Console.WriteLine("Nome: " + Nome);
-            Console.WriteLine("Idade: " + Idade);
-            Console.WriteLine("CPF: " + Cpf);
-            Console.WriteLine("Qual campo deseja atualizar?");
-            int campo = int.Parse(Console.ReadLine());
-            Console.WriteLine("Novo valor para o campo?");
-            string respostaC= Console.ReadLine();
+            
 
           
         }
-
-    }
-    }
+     }
+     }
 
