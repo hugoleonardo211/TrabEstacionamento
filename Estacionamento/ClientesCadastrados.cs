@@ -20,9 +20,10 @@ namespace Estacionamento
 
         private void InicializarDados()
         {
-            FuncionariosMarketing.Add(new Marketing(1, "Paulo", 24, 1500));
-            FuncionariosMarketing.Add(new Marketing(1, "Vinicius", 24, 1600));
-            FuncionariosMarketing.Add(new Marketing(1, "Samuel", 24, 1100));
+            Cadastros.Add(new ClientesCadastrados());
+            Cadastros.Add(new ClientesCadastrados());
+            Cadastros.Add(new ClientesCadastrados());
+            InicializarDados();
 
         }
     }
