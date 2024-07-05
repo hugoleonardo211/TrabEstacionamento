@@ -33,7 +33,7 @@ namespace Estacionamento
                 Console.WriteLine("Deseja usar seu cupom de desconto? Se sim digite 1.\n");
                 Console.WriteLine("Se não digite 2.");
                 resposta= int.Parse(Console.ReadLine());
-                
+                 
                 if(resposta == 1)
                 {
 
@@ -79,6 +79,7 @@ namespace Estacionamento
                     Console.WriteLine("Digite o novo Nome que deseja.");
                     string respostac = Console.ReadLine();
                     respostaC = respostac;
+          
 
                     Console.WriteLine("--------CADASTRO REALIZADO---------");
                     Console.WriteLine("Nome: " + respostaC);
