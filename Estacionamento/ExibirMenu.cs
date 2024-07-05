@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Estacionamento
+﻿namespace Estacionamento
 {
-  public class ExibirMenu
+    public class ExibirMenu
     {
         public string respostaC { get; set; }
         public int Id { get; set; }
@@ -14,7 +8,7 @@ namespace Estacionamento
         public int Cpf { get; set; }
         public string Nome { get; set; }
         public int resposta { get; set; }
-        
+
         public void Exibirmenu()
         {
 
@@ -28,25 +22,27 @@ namespace Estacionamento
                 Console.WriteLine("Digite um número valído.\n");
             }
 
-            else if (resposta == 1) {
+            else if (resposta == 1)
+            {
 
                 Console.WriteLine("Deseja usar seu cupom de desconto? Se sim digite 1.\n");
                 Console.WriteLine("Se não digite 2.");
-                resposta= int.Parse(Console.ReadLine());
-                 
-                if(resposta == 1)
+                resposta = int.Parse(Console.ReadLine());
+
+                if (resposta == 1)
                 {
 
                     Console.WriteLine("Ok,vamos aplicar seu desconto no valor final.");
                 }
-                else if(resposta == 2)
+                else if (resposta == 2)
                 {
                     Console.WriteLine("Ok, você nao tera o desconto final.");
                 }
 
             }
-            else if(resposta == 2){
-               
+            else if (resposta == 2)
+            {
+
                 Console.WriteLine(" Vamos se cadastrar.");
                 Console.WriteLine("----------------------------");
                 Console.WriteLine(" Digite seu nome.");
@@ -54,16 +50,16 @@ namespace Estacionamento
                 Console.WriteLine(" Qual sua Idade.");
                 Idade = int.Parse(Console.ReadLine());
                 Console.WriteLine(" Digite seu CPF.");
-              Cpf= int.Parse(Console.ReadLine());
+                Cpf = int.Parse(Console.ReadLine());
                 Console.WriteLine("----------------------------");
-            } 
+            }
         }
         public void Editar()
         {
             Console.WriteLine("------------DESEJA EDITAR ALGO-------------");
-            Console.WriteLine("Nome: " + Nome); 
+            Console.WriteLine("Nome: " + Nome);
             Console.WriteLine("Idade: " + Idade);
-            Console.WriteLine("CPF: "+ Cpf);
+            Console.WriteLine("CPF: " + Cpf);
             Console.WriteLine("Deseja editar algum dos dados?  Se sim digite 1/  Se nao digite 2.");
             int dado = int.Parse(Console.ReadLine());
 
@@ -79,7 +75,7 @@ namespace Estacionamento
                     Console.WriteLine("Digite o novo Nome que deseja.");
                     string respostac = Console.ReadLine();
                     respostaC = respostac;
-          
+
 
                     Console.WriteLine("--------CADASTRO REALIZADO---------");
                     Console.WriteLine("Nome: " + respostaC);
@@ -112,7 +108,7 @@ namespace Estacionamento
                     Console.WriteLine("-----------------------------------");
                 }
 
-              
+
             }
 
             else if (dado == 2)
@@ -127,6 +123,6 @@ namespace Estacionamento
 
             }
         }
-      }
-     }
+    }
+}
 
