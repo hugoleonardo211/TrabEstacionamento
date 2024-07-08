@@ -2,6 +2,8 @@
 {
     public class ExibirMenu
     {
+        public List<ClientesCadastrados> Clientes { get; private set; }
+        public bool ClienteVelho { get; set; } 
         public string respostaC { get; set; }
         public int Id { get; set; }
         public int Idade { get; set; }
@@ -11,7 +13,6 @@
 
         public void Exibirmenu()
         {
-
             Console.WriteLine("Olá, Seja Bem-Vindo ao nosso estacionamento.\n");
             Console.WriteLine("Se você ja e nosso cliente, digite 1.");
             Console.WriteLine("Se você deseja se cadastrar digite 2.");
@@ -19,26 +20,27 @@
 
             if (resposta < 1 || resposta > 2)
             {
-                Console.WriteLine("Digite um número valído.\n");
+                Console.WriteLine("Digite um número valído.");
+                Exibirmenu();
             }
 
             else if (resposta == 1)
             {
-
-                Console.WriteLine("Deseja usar seu cupom de desconto? Se sim digite 1.\n");
-                Console.WriteLine("Se não digite 2.");
+                Console.WriteLine("Digite seu CPF,para encontrarmos seu login.");
                 resposta = int.Parse(Console.ReadLine());
 
-                if (resposta == 1)
-                {
-
-                    Console.WriteLine("Ok,vamos aplicar seu desconto no valor final.");
+                    foreach (ClientesCadastrados m in Clientes)
+                    {
+                        if (resposta == m.CPF)
+                        {
+                            Console.WriteLine("Ok, você ja e nosso clinete.");
+                            Console.WriteLine("você tera um desconto de 5% no valor final do estacionamento.");
+                            ClienteVelho = true;
+                        }
+                    }
+                    
                 }
-                else if (resposta == 2)
-                {
-                    Console.WriteLine("Ok, você nao tera o desconto final.");
-                }
-
+                ClienteVelho = false;
             }
             else if (resposta == 2)
             {
@@ -106,6 +108,7 @@
                     Console.WriteLine("Idade: " + Idade);
                     Console.WriteLine("CPF: " + respostaC);
                     Console.WriteLine("-----------------------------------");
+
                 }
 
 
@@ -118,9 +121,6 @@
                 Console.WriteLine("Idade: " + Idade);
                 Console.WriteLine("CPF: " + Cpf);
                 Console.WriteLine("-----------------");
-
-
-
             }
         }
     }

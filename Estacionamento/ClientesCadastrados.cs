@@ -8,23 +8,15 @@ namespace Estacionamento
 {
     public class ClientesCadastrados
     {
-        public List<ClientesCadastrados> Cadastros { get; private set; }
+        public int CPF { get; set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
 
-
-
-        public ClientesCadastrados()
+        public ClientesCadastrados(int cpf, string nome, int idade)
         {
-            Cadastros = new List<ClientesCadastrados>();
-            InicializarDados();
-        }
-
-        private void InicializarDados()
-        {
-            Cadastros.Add(new ClientesCadastrados());
-            Cadastros.Add(new ClientesCadastrados());
-            Cadastros.Add(new ClientesCadastrados());
-            InicializarDados();
-
+            CPF = cpf;
+            Nome = nome;
+            Idade = idade;
         }
     }
 }
