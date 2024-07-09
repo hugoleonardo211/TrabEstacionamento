@@ -3,7 +3,7 @@
     public class ExibirMenu
     {
         public List<ClientesCadastrados> Clientes { get; private set; }
-        public bool ClienteVelho { get; set; } 
+        public bool ClienteVelho { get; set; }
         public string respostaC { get; set; }
         public int Id { get; set; }
         public int Idade { get; set; }
@@ -24,23 +24,20 @@
                 Exibirmenu();
             }
 
-            else if (resposta == 1)
+            if (resposta == 1)
             {
                 Console.WriteLine("Digite seu CPF,para encontrarmos seu login.");
                 resposta = int.Parse(Console.ReadLine());
 
-                    foreach (ClientesCadastrados m in Clientes)
+                foreach (ClientesCadastrados m in Clientes)
+                {
+                    if (resposta == m.CPF)
                     {
-                        if (resposta == m.CPF)
-                        {
-                            Console.WriteLine("Ok, você ja e nosso clinete.");
-                            Console.WriteLine("você tera um desconto de 5% no valor final do estacionamento.");
-                            ClienteVelho = true;
-                        }
+                        Console.WriteLine("Ok, você ja e nosso clinete.");
+                        Console.WriteLine("você tera um desconto de 5% no valor final do estacionamento.");
+                        ClienteVelho = true;
                     }
-                    
                 }
-                ClienteVelho = false;
             }
             else if (resposta == 2)
             {
@@ -56,6 +53,8 @@
                 Console.WriteLine("----------------------------");
             }
         }
+
+
         public void Editar()
         {
             Console.WriteLine("------------DESEJA EDITAR ALGO-------------");
@@ -125,4 +124,8 @@
         }
     }
 }
+    
+
+
+    
 
