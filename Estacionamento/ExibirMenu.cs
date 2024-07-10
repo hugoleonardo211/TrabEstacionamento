@@ -7,12 +7,21 @@
         public string respostaC { get; set; }
         public int Id { get; set; }
         public int Idade { get; set; }
-        public int Cpf { get; set; }
-        public string Nome { get; set; }
+        public int Cpf  { get; set; }
+    public string Nome { get; set; }
         public int resposta { get; set; }
-
+        public ExibirMenu()
+        {
+            Clientes = new List<ClientesCadastrados>();
+            InitDados();
+        }
+        public void InitDados()
+        {
+            Clientes.Add(new ClientesCadastrados(132, "hg", 23));
+        }
         public void Exibirmenu()
         {
+            
             Console.WriteLine("Olá, Seja Bem-Vindo ao nosso estacionamento.\n");
             Console.WriteLine("Se você ja e nosso cliente, digite 1.");
             Console.WriteLine("Se você deseja se cadastrar digite 2.");
@@ -37,7 +46,30 @@
                         Console.WriteLine("você tera um desconto de 5% no valor final do estacionamento.");
                         ClienteVelho = true;
                     }
-                }
+                    else if (resposta != m.CPF)
+                    {
+                        Console.WriteLine("Login não encontrado");
+                    }
+                    public void MenuReser()
+                    {
+                        int acao = -1;
+                        while (acao > 2 || acao < 0)
+                        {
+                            Console.WriteLine($"----------- Reservar ---------\n" +
+                                                    $"\n 1 -Listar vagas disponiveis " +
+                                                    $"\n 2 - reservar vagas" +
+                                              $"\n -------------------------------------");
+                            Console.WriteLine("qual ação voce deseja reaizar");
+                            acao = int.Parse(Console.ReadLine());
+                            if (acao > 2 || acao <= 0)
+                            {
+                                Console.WriteLine("digite um numero valido!!\n favor digitar un numero valido");
+
+                            }
+
+                        }
+                    }
+                
             }
             else if (resposta == 2)
             {
