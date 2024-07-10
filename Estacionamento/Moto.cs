@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Estacionamento
 {
-    public class Moto
+    public class Moto 
     {
-    }
+    } 
 }

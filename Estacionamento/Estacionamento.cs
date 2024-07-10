@@ -8,9 +8,9 @@ namespace Estacionamento
 {
     public class Estacionamento
     {
-        //public int totalvagas { get; set; }
-        //public int vagasdis { get; set; }
-        //public int vagasocup { get; set; }
+        public int totalvagas { get; set; }
+        public int vagasdis { get; set; }
+        public int vagasocup { get; set; }
 
 
 

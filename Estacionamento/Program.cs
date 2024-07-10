@@ -1,9 +1,8 @@
 ﻿using Estacionamento;
 
-ExibirMenu M =new ExibirMenu();
+//ExibirMenu M =new ExibirMenu();
 
-M.Exibirmenu();
-M.Editar();
-
+//M.Exibirmenu();
+//M.Editar();
 
 
