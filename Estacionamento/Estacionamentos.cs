@@ -25,19 +25,19 @@ namespace Estacionamento
             // Adicionar 10 vagas para deficientes
             for (int i = 0; i < 10; i++)
             {
-                vagasDisponiveis.Add($"Vaga {i + 1} - Deficiente");
+                vagasDisponiveis.Add($"Vaga {i + 1} -Deficiente");
             }
 
             // Adicionar 10 vagas para carros
             for (int i = 0; i < 10; i++)
             {
-                vagasDisponiveis.Add($"Vaga {i + 11} - Carro");
+                vagasDisponiveis.Add($"Vaga {i + 11} -Carro");
             }
 
             // Adicionar 10 vagas para motos
             for (int i = 0; i < 10; i++)
             {
-                vagasDisponiveis.Add($"Vaga {i + 21} - Moto");
+                vagasDisponiveis.Add($"Vaga {i + 21} -Moto");
             }
         }
 

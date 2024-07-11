@@ -29,45 +29,73 @@ while (true)
     Console.WriteLine("Digite 7 para liberar uma vaga");
     Console.WriteLine("Digite 8 para sair.");
     string opcao = Console.ReadLine();
-    Console.WriteLine("----------------------------------------------------");
+    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
 
     if (opcao == "1")
     {
         estacionamento.ExibirVagasDisponiveisPorTipo("Deficiente");
-        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "2")
     {
         estacionamento.ExibirVagasDisponiveisPorTipo("Carro");
-        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "3")
     {
         estacionamento.ExibirVagasDisponiveisPorTipo("Moto");
-        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "4")
     {
         estacionamento.ExibirVagasDisponiveis();
-        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "5")
     {
         estacionamento.ExibirVagasOcupadas();
-        Console.WriteLine("----------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "6")
     {
-        Console.WriteLine("Se quiser ocupar uma vaga de Deficiente digite:  Vaga numero da vaga - Deficiente\nSe quiser ocupar uma vaga de Carro digite:  Vaga numero da vaga - Carro\nSe quiser ocupar uma vaga de Moto digite:  Vaga numero da vaga - Moto\n");
+        Console.WriteLine("Qual vaga deseja ocupar\nDeficiente = 1\nCarro = 2\nMoto = 3");
+        int resposta = int.Parse(Console.ReadLine());
+        string tipoVaga = string.Empty;
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+        if (resposta == 1)
+        {
+            estacionamento.ExibirVagasDisponiveisPorTipo("Deficiente");
+            tipoVaga= "Deficiente";
+          
+        }
+        else if (resposta == 2)
+        {
+            estacionamento.ExibirVagasDisponiveisPorTipo("Carro");
+            tipoVaga = "Carro";
+
+        }
+        else if (resposta == 3)
+        {
+            estacionamento.ExibirVagasDisponiveisPorTipo("Moto");
+            tipoVaga = "Moto";
+
+        }
+        
+        Console.WriteLine("\nAgora digite o nome da vaga que deseja ocupar");
         string vaga = Console.ReadLine();
-        estacionamento.OcuparVaga(vaga);
-        Console.WriteLine("----------------------------------------------------");
+        string formatada = $"Vaga {vaga} -{tipoVaga}";
+        estacionamento.OcuparVaga(formatada);
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "7")
     {
+        string tipoVaga = string.Empty;
+
+        Console.WriteLine("\nAgora digite o nome da vaga que deseja liberar");
         string vaga = Console.ReadLine();
-        estacionamento.LiberarVaga(vaga);
-        Console.WriteLine("----------------------------------------------------");
+        string formatada = $"Vaga {vaga} -{tipoVaga}"; 
+        estacionamento.LiberarVaga(formatada);
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
     }
     else if (opcao == "8")
     {
@@ -80,3 +108,4 @@ while (true)
 }
 
 
+//Console.WriteLine("Se quiser ocupar uma vaga de Deficiente digite o seguinte:  Vaga 1 a 10  - Deficiente\nExemplo: Vaga 1 - Deficiente\n\nSe quiser ocupar uma vaga de Carro digite o seguinte:  Vaga 11 a 20 - Carro\nExemplo: Vaga 11 - Carro\n\nSe quiser ocupar uma vaga de Moto digite o seguinte:  Vaga 21 a 30 - Moto\nExemplo: Vaga 21 - Moto\n");
