@@ -14,9 +14,16 @@ namespace Estacionamento
 
         public ClientesCadastrados(int cpf, string nome, int idade)
         {
-            CPF = cpf;
-            Nome = nome;
-            Idade = idade;
+            CPF = 894;
+            Nome = "hugo";
+            Idade = 77;
+        }
+        public void ExibirDados()
+        {
+            Console.WriteLine("-----------------");
+            Console.WriteLine("Nome: " + Nome);
+            Console.WriteLine("Idade: " + Idade);
+            Console.WriteLine("CPF: " + CPF);
         }
     }
 }
