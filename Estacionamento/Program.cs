@@ -3,14 +3,26 @@
 
 
 
-//// Criar uma instância da classe Carro
+Sobre sobre = new Sobre();
+
+Console.WriteLine("Registro de Entrada e Saída do Usuario");
+
+// Registrar entrada do veículo
+sobre.RegistrarEntrada();
+
+// Exibir informações
+sobre.ExibirInformacoes();
+
+
+
+////Criar uma instância da classe Carro
 //Carro meuCarro = new Carro();
 
-//// Solicitar as informações do carro ao usuário
+////Solicitar as informações do carro ao usuário
 //meuCarro.SolicitarInformacoes();
 //Console.WriteLine("------------------------------");
 
-//// Exibir as informações do carro
+////Exibir as informações do carro
 //meuCarro.ExibirInformacoes();
 //Console.WriteLine("------------------------------");
 
@@ -65,8 +77,8 @@ while (true)
         if (resposta == 1)
         {
             estacionamento.ExibirVagasDisponiveisPorTipo("Deficiente");
-            tipoVaga= "Deficiente";
-          
+            tipoVaga = "Deficiente";
+
         }
         else if (resposta == 2)
         {
@@ -80,8 +92,8 @@ while (true)
             tipoVaga = "Moto";
 
         }
-        
-        Console.WriteLine("\nAgora digite o nome da vaga que deseja ocupar");
+
+        Console.WriteLine("\nAgora digite o numero da vaga que deseja ocupar");
         string vaga = Console.ReadLine();
         string formatada = $"Vaga {vaga} -{tipoVaga}";
         estacionamento.OcuparVaga(formatada);
@@ -89,23 +101,49 @@ while (true)
     }
     else if (opcao == "7")
     {
-        string tipoVaga = string.Empty;
 
-        Console.WriteLine("\nAgora digite o nome da vaga que deseja liberar");
+        Console.WriteLine("Qual vaga deseja liberar\nDeficiente = 1\nCarro = 2\nMoto = 3");
+        int resposta = int.Parse(Console.ReadLine());
+        string tipoVaga = string.Empty;
+        Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+        if (resposta == 1)
+        {
+            estacionamento.ExibirVagasOcupadas();
+            tipoVaga = "Deficiente";
+
+        }
+        else if (resposta == 2)
+        {
+            estacionamento.ExibirVagasOcupadas();
+            tipoVaga = "Carro";
+
+        }
+        else if (resposta == 3)
+        {
+            estacionamento.ExibirVagasOcupadas();
+            tipoVaga = "Moto";
+
+        }
+
+        Console.WriteLine("\nDigite a vaga que deseja liberar");
         string vaga = Console.ReadLine();
-        string formatada = $"Vaga {vaga} -{tipoVaga}"; 
+        string formatada = $"Vaga {vaga} -{tipoVaga}";
         estacionamento.LiberarVaga(formatada);
         Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+
+
     }
     else if (opcao == "8")
     {
-        break;
+        // Confirmar e registrar saída do veículo
+        bool result = sobre.ConfirmarSaida();
+        if (result)
+        {
+            break;
+        }
     }
     else
     {
         Console.WriteLine("Opção inválida. Tente novamente.");
     }
 }
-
-
-//Console.WriteLine("Se quiser ocupar uma vaga de Deficiente digite o seguinte:  Vaga 1 a 10  - Deficiente\nExemplo: Vaga 1 - Deficiente\n\nSe quiser ocupar uma vaga de Carro digite o seguinte:  Vaga 11 a 20 - Carro\nExemplo: Vaga 11 - Carro\n\nSe quiser ocupar uma vaga de Moto digite o seguinte:  Vaga 21 a 30 - Moto\nExemplo: Vaga 21 - Moto\n");

@@ -81,7 +81,7 @@ namespace Estacionamento
         public void ExibirVagasDisponiveisPorTipo(string tipo)
         {
             Console.WriteLine($"Vagas Disponíveis para {tipo}:");
-            foreach (var vaga in vagasDisponiveis)
+            foreach (var vaga in vagasDisponiveis.OrderBy(x => x))
             {
                 if (vaga.Contains(tipo))
                 {
@@ -100,5 +100,5 @@ namespace Estacionamento
         }
 
 
-    }
+    } 
 }
