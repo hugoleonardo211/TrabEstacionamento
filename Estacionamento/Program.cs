@@ -6,4 +6,6 @@ M.Exibirmenu();
 
 M.RealizarCadastro();
 
-M.Editar();
+CadastroCliente C =new CadastroCliente();
+
+C.Editar();

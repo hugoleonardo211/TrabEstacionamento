@@ -6,9 +6,9 @@
         public string respostaC { get; set; }
         public int Id { get; set; }
         public int Idade { get; set; }
-        public int Cpf  { get; set; }
-        public int acao { get; set; }   
-    public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public int acao { get; set; }
+        public string Nome { get; set; }
         public int resposta { get; set; }
         public ExibirMenu()
         {
@@ -17,8 +17,8 @@
         }
         public void AdClientes()
         {
-            Clientes.Add(new ClientesCadastrados(132,"Hugo",23));
-            Clientes.Add(new ClientesCadastrados(155, "Vini", 60));
+            Clientes.Add(new ClientesCadastrados("132", "Hugo", 23));
+            Clientes.Add(new ClientesCadastrados("155", "Vini", 60));
         }
         public void Listar()
         {
@@ -37,27 +37,27 @@
         }
 
         public void RealizarCadastro()
-        { 
+        {
             if (resposta < 1 || resposta > 2)
             {
                 Console.WriteLine("Digite um número valído.\n");
                 Exibirmenu();
             }
 
-         else   if (resposta == 1)
+            else if (resposta == 1)
             {
                 Console.WriteLine("Digite seu CPF,para encontrarmos seu login.");
                 resposta = int.Parse(Console.ReadLine());
 
                 foreach (ClientesCadastrados m in Clientes)
                 {
-                    if (resposta == m.CPF)
+                    if (resposta.ToString() == m.CPF)
                     {
                         Console.WriteLine("Ok, você ja e nosso clinete.");
                         Console.WriteLine("Você tera um desconto de 5% no valor final do estacionamento.\n");
 
                     }
-                    else if (resposta != m.CPF)
+                    else if (resposta.ToString() != m.CPF)
                     {
                         Console.WriteLine("Login não encontrado");
                         RealizarCadastro();
@@ -67,21 +67,26 @@
             }
             else if (resposta == 2)
             {
-
                 Console.WriteLine(" Vamos se cadastrar.");
-                Console.WriteLine("----------------------------");
-                Console.WriteLine(" Digite seu nome.");
-                Nome = Console.ReadLine();
-                Console.WriteLine(" Qual sua Idade.");
+                Console.WriteLine("Digite seu nome.");
+                string Nome = Console.ReadLine();
+                Console.WriteLine("Digite seu CPF.");
+                Cpf = Console.ReadLine();
+                Console.WriteLine("Digite sua Idade.");
                 Idade = int.Parse(Console.ReadLine());
-                Console.WriteLine(" Digite seu CPF.");
-                Cpf = int.Parse(Console.ReadLine());
-                Console.WriteLine("----------------------------");
+
+                Clientes.Add(new ClientesCadastrados(Nome, Cpf, Idade));
+
+                Console.WriteLine("--------CADASTRO REALIZADO---------");
+                Console.WriteLine("Nome: " + Nome);
+                Console.WriteLine("Idade: " + Idade);
+                Console.WriteLine("CPF: " + Cpf);
+                Console.WriteLine("-----------------");
             }
-        }
-    
-   
+
+
         }
     }
 }
-   
+
+

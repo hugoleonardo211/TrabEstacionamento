@@ -7,13 +7,12 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Estacionamento
 {
-  public class CadastroCliente
+    public class CadastroCliente:ExibirMenu
     {
 
         public void Editar()
         {
             Console.WriteLine("------------DESEJA EDITAR ALGO-------------");
-            Listar();
             Console.WriteLine("Deseja editar algum dos dados?\nSe sim digite 1\nSe nao digite 2.");
             int dado = int.Parse(Console.ReadLine());
 
@@ -33,7 +32,7 @@ namespace Estacionamento
                 {
                     Console.WriteLine("Digite o novo Nome que deseja.");
                     string respostac = Console.ReadLine();
-                    respostaC = respostac;
+                    
 
 
                     Console.WriteLine("--------CADASTRO REALIZADO---------");
@@ -56,7 +55,7 @@ namespace Estacionamento
                 }
                 else if (respostaA == "3")
                 {
-                    Console.WriteLine("Digiite o novo CPF que deseja.");
+                    Console.WriteLine("Digite o novo CPF que deseja.");
                     string respostac = Console.ReadLine();
                     respostaC = respostac;
 
@@ -80,4 +79,5 @@ namespace Estacionamento
                 Console.WriteLine("-----------------");
             }
         }
+    }
 }

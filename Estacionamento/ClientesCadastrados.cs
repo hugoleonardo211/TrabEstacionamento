@@ -8,15 +8,15 @@ namespace Estacionamento
 {
     public class ClientesCadastrados
     {
-        public int CPF { get; set; }
+        public string CPF { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
 
-        public ClientesCadastrados(int cpf, string nome, int idade)
+        public ClientesCadastrados(string cpf, string nome, int idade)
         {
-            CPF = 894;
-            Nome = "hugo";
-            Idade = 77;
+            CPF = cpf;
+            Nome = nome;
+            Idade = idade;
         }
         public void ExibirDados()
         {
