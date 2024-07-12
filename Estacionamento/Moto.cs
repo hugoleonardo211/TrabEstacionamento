@@ -8,5 +8,38 @@ namespace Estacionamento
 {
     public class Moto
     {
+
+
+        // Propriedades da moto
+        public int Cilindradas { get; set; }
+        public string Placa { get; set; }
+        public string Modelo { get; set; }
+        public string Cor { get; set; }
+
+        // Método para solicitar e armazenar as informações da moto
+        public void SolicitarInformacoes()
+        {
+            Console.Write("Digite as cilindradas da moto: ");
+            Cilindradas = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite a placa da moto: ");
+            Placa = Console.ReadLine();
+
+            Console.Write("Digite o modelo da moto: ");
+            Modelo = Console.ReadLine();
+
+            Console.Write("Digite a cor da moto: ");
+            Cor = Console.ReadLine();
+        }
+
+        // Método para exibir as informações da moto
+        public void ExibirInformacoes()
+        {
+            Console.WriteLine("\nInformações da moto:");
+            Console.WriteLine($"Cilindradas: {Cilindradas}");
+            Console.WriteLine($"Placa: {Placa}");
+            Console.WriteLine($"Modelo: {Modelo}");
+            Console.WriteLine($"Cor: {Cor}");
+        }
     }
 }
