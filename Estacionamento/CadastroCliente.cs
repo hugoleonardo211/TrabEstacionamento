@@ -36,7 +36,7 @@ namespace Estacionamento
 
 
                     Console.WriteLine("--------CADASTRO REALIZADO---------");
-                    Console.WriteLine("Nome: " + respostaC);
+                    Console.WriteLine("Nome:  " + respostac);
                     Console.WriteLine("Idade: " + Idade);
                     Console.WriteLine("CPF: " + Cpf);
                     Console.WriteLine("-----------------------------------");
@@ -49,7 +49,7 @@ namespace Estacionamento
 
                     Console.WriteLine("--------CADASTRO REALIZADO---------");
                     Console.WriteLine("Nome: " + Nome);
-                    Console.WriteLine("Idade: " + respostaC);
+                    Console.WriteLine("Idade: " + respostac);
                     Console.WriteLine("CPF: " + Cpf);
                     Console.WriteLine("-----------------------------------");
                 }
@@ -62,7 +62,7 @@ namespace Estacionamento
                     Console.WriteLine("--------CADASTRO REALIZADO---------");
                     Console.WriteLine("Nome: " + Nome);
                     Console.WriteLine("Idade: " + Idade);
-                    Console.WriteLine("CPF: " + respostaC);
+                    Console.WriteLine("CPF: " + respostac);
                     Console.WriteLine("-----------------------------------");
 
                 }

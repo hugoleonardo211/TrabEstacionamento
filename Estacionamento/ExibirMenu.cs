@@ -30,9 +30,12 @@
         public void Exibirmenu()
         {
 
-            Console.WriteLine("Olá, Seja Bem-Vindo ao nosso estacionamento.\n");
-            Console.WriteLine("Se você ja e nosso cliente, digite 1.");
-            Console.WriteLine("Se você deseja se cadastrar digite 2.");
+            Console.WriteLine("<------- BEM VINDO AO ESTACIONAMENTO ------->");
+            Console.WriteLine("1 - Logar");
+            Console.WriteLine("2 - Cadastrar");
+            Console.WriteLine("0 - Sair do Sistema");
+            Console.WriteLine("<-------------------------------->");
+
             resposta = int.Parse(Console.ReadLine());
         }
 
@@ -46,47 +49,42 @@
 
             else if (resposta == 1)
             {
-                Console.WriteLine("Digite seu CPF,para encontrarmos seu login.");
-                resposta = int.Parse(Console.ReadLine());
-
-                foreach (ClientesCadastrados m in Clientes)
-                {
-                    if (resposta.ToString() == m.CPF)
-                    {
-                        Console.WriteLine("Ok, você ja e nosso clinete.");
-                        Console.WriteLine("Você tera um desconto de 5% no valor final do estacionamento.\n");
-
-                    }
-                    else if (resposta.ToString() != m.CPF)
-                    {
-                        Console.WriteLine("Login não encontrado");
-                        RealizarCadastro();
-                    }
-                }
-
+                return Login();
             }
             else if (resposta == 2)
             {
-                Console.WriteLine(" Vamos se cadastrar.");
-                Console.WriteLine("Digite seu nome.");
-                string Nome = Console.ReadLine();
-                Console.WriteLine("Digite seu CPF.");
-                Cpf = Console.ReadLine();
-                Console.WriteLine("Digite sua Idade.");
-                Idade = int.Parse(Console.ReadLine());
-
-                Clientes.Add(new ClientesCadastrados(Nome, Cpf, Idade));
-
-                Console.WriteLine("--------CADASTRO REALIZADO---------");
-                Console.WriteLine("Nome: " + Nome);
-                Console.WriteLine("Idade: " + Idade);
-                Console.WriteLine("CPF: " + Cpf);
-                Console.WriteLine("-----------------");
+                {
+                    Gerenciador.AdicionarUsuario();
+                    return Login()
+                }
             }
 
-
+            private Usuario Login()
+            {
+                Console.WriteLine("<------------ LOGIN ------------>");
+                bool verificacaoSenha = false;
+                int id = 0;
+                string senha = string.Empty;
+                while (!verificacaoSenha)
+                {
+                    Console.WriteLine("Digite o número id da conta:");
+                    id = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite a senha do login da conta:");
+                    senha = Console.ReadLine();
+                    if (Gerenciador.LoginSenha(senha, id))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Login efetuado com sucesso.");
+                        verificacaoSenha = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Id ou Senha incorreto(s).");
+                    }
+                }
+                Console.WriteLine("<------------------------------->");
+                return Gerenciador.BuscarUsuario(senha, id);
+            }
         }
     }
 }
-
-
