@@ -5,26 +5,47 @@
 
 Sobre sobre = new Sobre();
 
+Moto m = new Moto();
+Carro c = new Carro();
+
+Cliente cliente = new Cliente();
+cliente.Cadastro();
+
+
+
+
+// Marcar o tempo de início
+DateTime startTime = DateTime.Now;
+
+
+Console.WriteLine("--------------------------------------------------------------------------------------------------------\n");
 Console.WriteLine("Registro de Entrada e Saída do Usuario");
 
 // Registrar entrada do veículo
 sobre.RegistrarEntrada();
-
-// Exibir informações
-sobre.ExibirInformacoes();
+Console.WriteLine("\n");
 
 
 
-////Criar uma instância da classe Carro
-//Carro meuCarro = new Carro();
 
-////Solicitar as informações do carro ao usuário
-//meuCarro.SolicitarInformacoes();
-//Console.WriteLine("------------------------------");
 
-////Exibir as informações do carro
-//meuCarro.ExibirInformacoes();
-//Console.WriteLine("------------------------------");
+string respostas = string.Empty;
+Console.WriteLine("Qual seu tipo de veiculo Moto ou Carro");
+respostas = Console.ReadLine();
+if (respostas == "Moto" || respostas == "moto")
+{
+    m.SolicitarInformacoes();
+    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+    m.ExibirInformacoes();
+    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+}
+else if (respostas == "Carro" || respostas == "carro")
+{
+    c.SolicitarInformacoes();
+    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+    c.ExibirInformacoes();
+    Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+}
 
 
 
@@ -32,6 +53,7 @@ Estacionamentos estacionamento = new Estacionamentos(30);
 
 while (true)
 {
+
     Console.WriteLine("Digite 1 para exibir vagas para Deficiente.");
     Console.WriteLine("Digite 2 para exibir vagas para Carro.");
     Console.WriteLine("Digite 3 para exibir vagas para Moto.");
@@ -93,7 +115,7 @@ while (true)
 
         }
 
-        Console.WriteLine("\nAgora digite o numero da vaga que deseja ocupar");
+        Console.WriteLine("\nAgora digite o nome da vaga que deseja ocupar");
         string vaga = Console.ReadLine();
         string formatada = $"Vaga {vaga} -{tipoVaga}";
         estacionamento.OcuparVaga(formatada);
@@ -137,8 +159,32 @@ while (true)
     {
         // Confirmar e registrar saída do veículo
         bool result = sobre.ConfirmarSaida();
-        if (result)
+        if (result == true)
         {
+            // Exibir informações
+            sobre.ExibirInformacoes();
+
+            // Marcar o tempo de fim
+            DateTime endTime = DateTime.Now;
+
+            // Informar ao usuário que o programa começou
+            Console.WriteLine("Pressione qualquer tecla para finalizar e calcular o preço.");
+
+            // Esperar que o usuário pressione uma tecla
+            Console.ReadKey();
+
+
+
+            // Calcular a diferença de tempo em minutos
+            double totalMinutes = (endTime - startTime).TotalMinutes;
+
+            // Calcular o preço total
+            double price = totalMinutes * 2.0;
+
+            // Mostrar o tempo total e o preço para o usuário
+            Console.WriteLine($"Tempo total no programa: {totalMinutes:F2} minutos");
+            Console.WriteLine($"Preço a ser pago: R${price:F2}");
+
             break;
         }
     }

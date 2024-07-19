@@ -31,10 +31,9 @@ namespace Estacionamento
             else
             {
 
-                Console.WriteLine("Saída não registrada.\n");
+                Console.WriteLine("Saída não registrada.");
+
                 return false;
-
-
             }
         }
 
@@ -49,7 +48,7 @@ namespace Estacionamento
             }
             else
             {
-                Console.WriteLine("Saída ainda não registrada.\n"); 
+                Console.WriteLine("Saída ainda não registrada.\n");
             }
         }
     }
